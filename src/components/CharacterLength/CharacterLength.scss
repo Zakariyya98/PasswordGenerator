@@ -1,0 +1,17 @@
+.char-length {
+  &__container {
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  &__range {
+    width: 400px;
+    &-value {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
