@@ -1,7 +1,11 @@
 import "./Card.scss";
 
 const Card = () => {
-  return <h1>Hello World</h1>;
+  return (
+    <div className="card__container">
+      <h1>Password Generator</h1>
+    </div>
+  );
 };
 
 export default Card;
