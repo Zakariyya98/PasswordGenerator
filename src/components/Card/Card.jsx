@@ -1,10 +1,14 @@
+import CharacterLength from "../CharacterLength";
 import "./Card.scss";
 
 const Card = () => {
   return (
-    <div className="card__container">
+    <>
       <h1>Password Generator</h1>
-    </div>
+      <div className="card__container">
+        <CharacterLength />
+      </div>
+    </>
   );
 };
 
