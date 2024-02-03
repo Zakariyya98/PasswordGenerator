@@ -4,6 +4,24 @@ import "./CharacterLength.scss";
 const CharacterLength = () => {
   const [rangeValue, setRangeValue] = useState(8);
 
+  const Allowed = {
+    Lowers: "qwertyuiopasdfghjklzxcvbnm",
+    Numbers: "1234567890",
+  };
+
+  const getRandomCharFromString = (str) =>
+    str.charAt(Math.floor(Math.random() * str.length));
+
+  const generatePassword = (length) => {
+    let pwd = "";
+    pwd += getRandomCharFromString(Allowed.Lowers);
+    pwd += getRandomCharFromString(Allowed.Numbers);
+    for (let i = pwd.length; i < length; i++)
+      pwd += getRandomCharFromString(Object.values(Allowed).join(""));
+    console.log(pwd);
+    return pwd;
+  };
+
   return (
     <div className="char-length__container">
       <div className="char-length__range-value">
@@ -23,6 +41,7 @@ const CharacterLength = () => {
           onChange={(event) => setRangeValue(event.target.value)}
         />
       </div>
+      <button onClick={() => generatePassword(rangeValue)}>Click me</button>
     </div>
   );
 };
