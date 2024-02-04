@@ -3,6 +3,7 @@ import "./CharacterLength.scss";
 
 const CharacterLength = () => {
   const [rangeValue, setRangeValue] = useState(8);
+  const [generatedPassword, setGeneratedPassword] = useState("");
 
   const Allowed = {
     Lowers: "qwertyuiopasdfghjklzxcvbnm",
@@ -14,12 +15,13 @@ const CharacterLength = () => {
 
   const generatePassword = (length) => {
     let pwd = "";
+    // Could do a switch case here where the value of ticked boxes
+    // can generate the required combinations.
     pwd += getRandomCharFromString(Allowed.Lowers);
     pwd += getRandomCharFromString(Allowed.Numbers);
     for (let i = pwd.length; i < length; i++)
       pwd += getRandomCharFromString(Object.values(Allowed).join(""));
-    console.log(pwd);
-    return pwd;
+    setGeneratedPassword(pwd);
   };
 
   return (
@@ -42,6 +44,7 @@ const CharacterLength = () => {
         />
       </div>
       <button onClick={() => generatePassword(rangeValue)}>Click me</button>
+      <p>Generated Password: {generatedPassword}</p>
     </div>
   );
 };
