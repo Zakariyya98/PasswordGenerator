@@ -24,7 +24,7 @@ const CharacterLength = () => {
           onChange={(event) => setRangeValue(event.target.value)}
         />
       </div>
-      <GenerateButton />
+      <GenerateButton charLength={rangeValue} />
     </div>
   );
 };
