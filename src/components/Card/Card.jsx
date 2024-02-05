@@ -1,4 +1,5 @@
 import CharacterLength from "../CharacterLength";
+import CharacterToggles from "../CharacterToggles";
 import "./Card.scss";
 
 const Card = () => {
@@ -7,6 +8,7 @@ const Card = () => {
       <h1>Password Generator</h1>
       <div className="card__container">
         <CharacterLength />
+        <CharacterToggles />
       </div>
     </>
   );
