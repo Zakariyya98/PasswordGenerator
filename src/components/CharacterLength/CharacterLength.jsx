@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./CharacterLength.scss";
+import GenerateButton from "../GenerateButton";
 
 const CharacterLength = () => {
   const [rangeValue, setRangeValue] = useState(8);
@@ -43,6 +44,7 @@ const CharacterLength = () => {
           onChange={(event) => setRangeValue(event.target.value)}
         />
       </div>
+      <GenerateButton />
       <button onClick={() => generatePassword(rangeValue)}>Click me</button>
       <p>Generated Password: {generatedPassword}</p>
     </div>
