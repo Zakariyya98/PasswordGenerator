@@ -29,7 +29,7 @@ const GenerateButton = ({ charLength }) => {
         onClick={() => generatePassword(charLength)}
         className="generate-button__container"
       >
-        Generate Button
+        Generate Password
       </button>
       <p>Generated Password: {generatedPassword}</p>
     </div>
