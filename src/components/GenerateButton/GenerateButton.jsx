@@ -1,7 +1,9 @@
+import "./GenerateButton.scss";
+
 const GenerateButton = () => {
   return (
     <div>
-      <button>Hello</button>
+      <button className="generate-button__container">Hello</button>
     </div>
   );
 };
