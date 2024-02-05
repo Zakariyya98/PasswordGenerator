@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./GenerateButton.scss";
 
-const GenerateButton = () => {
+const GenerateButton = ({ charLength }) => {
   const [generatedPassword, setGeneratedPassword] = useState("");
   const Allowed = {
     Lowers: "qwertyuiopasdfghjklzxcvbnm",
@@ -26,7 +26,7 @@ const GenerateButton = () => {
     <div>
       <button
         // Need to pull the state of rangeValue from CharacterLength.jsx
-        onClick={() => generatePassword(4)}
+        onClick={() => generatePassword(charLength)}
         className="generate-button__container"
       >
         Generate Button
