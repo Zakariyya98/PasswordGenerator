@@ -25,7 +25,6 @@ const GenerateButton = ({ charLength }) => {
   return (
     <div>
       <button
-        // Need to pull the state of rangeValue from CharacterLength.jsx
         onClick={() => generatePassword(charLength)}
         className="generate-button__container"
       >
