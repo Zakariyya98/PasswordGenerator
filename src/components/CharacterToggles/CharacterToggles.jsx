@@ -35,36 +35,44 @@ const CharacterToggles = (charLength) => {
 
   return (
     <div className="character-toggles__container">
-      <div>
+      <div className="character-toggles__checkbox--container">
         <input
+          className="character-toggles__checkbox"
           type="checkbox"
           onClick={(event) => setUpperChecked(event.target.checked)}
         />
-        <label>Include Uppercase Letters</label>
+        <label className="character-toggles__label">
+          Include Uppercase Letters
+        </label>
       </div>
 
-      <div>
+      <div className="character-toggles__checkbox--container">
         <input
+          className="character-toggles__checkbox"
           type="checkbox"
           onClick={(event) => setLowerChecked(event.target.checked)}
         />
-        <label>Include Lowercase Letters</label>
+        <label className="character-toggles__label">
+          Include Lowercase Letters
+        </label>
       </div>
 
-      <div>
+      <div className="character-toggles__checkbox--container">
         <input
+          className="character-toggles__checkbox"
           type="checkbox"
           onClick={(event) => setNumberChecked(event.target.checked)}
         />
-        <label>Include Numbers</label>
+        <label className="character-toggles__label">Include Numbers</label>
       </div>
 
-      <div>
+      <div className="character-toggles__checkbox--container">
         <input
+          className="character-toggles__checkbox"
           type="checkbox"
           onClick={(event) => setSymbolChecked(event.target.checked)}
         />
-        <label>Include Symbols</label>
+        <label className="character-toggles__label">Include Symbols</label>
       </div>
 
       <div>
