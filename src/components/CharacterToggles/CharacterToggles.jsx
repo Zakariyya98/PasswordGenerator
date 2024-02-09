@@ -38,18 +38,16 @@ const CharacterToggles = () => {
   if (symbolChecked) {
     passwordCharacters.push(characterArrays.Symbols);
   }
-
+  // Move inside the function once working
+  let password = "";
   const generatePasswordWithCheckedCharacters = (length) => {
-    let password = "";
+    // let password = "";
     for (let i = password.length; i < length; i++)
       password += getRandomCharFromString(
         Object.values(passwordCharacters).join("")
       );
-    console.log(password);
-    // console.log(Object.values(characterArrays));
+    setReturnedPassword(password);
   };
-
-  console.log(generatePasswordWithCheckedCharacters(24));
 
   return (
     <div className="character-toggles__container">
@@ -84,6 +82,10 @@ const CharacterToggles = () => {
         />
         <label>Include Symbols</label>
       </div>
+
+      <button onClick={() => generatePasswordWithCheckedCharacters(8)}>
+        Click me
+      </button>
 
       <div>
         <p>Generated Password: {returnedPassword}</p>
