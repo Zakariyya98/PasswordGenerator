@@ -18,7 +18,7 @@ const CharacterToggles = () => {
   };
 
   const getRandomCharFromString = (str) => {
-    str.charAt(Math.floor(Math.random() * str.length));
+    return str.charAt(Math.floor(Math.random() * str.length));
   };
 
   let passwordCharacters = [];
@@ -39,17 +39,17 @@ const CharacterToggles = () => {
     passwordCharacters.push(characterArrays.Symbols);
   }
 
-  console.log(passwordCharacters);
-
   const generatePasswordWithCheckedCharacters = (length) => {
     let password = "";
     for (let i = password.length; i < length; i++)
       password += getRandomCharFromString(
         Object.values(passwordCharacters).join("")
       );
+    console.log(password);
+    // console.log(Object.values(characterArrays));
   };
 
-  console.log(generatePasswordWithCheckedCharacters(5));
+  console.log(generatePasswordWithCheckedCharacters(24));
 
   return (
     <div className="character-toggles__container">
