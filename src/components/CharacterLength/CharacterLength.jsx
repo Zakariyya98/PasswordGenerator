@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./CharacterLength.scss";
-import GenerateButton from "../GenerateButton";
+import CharacterToggles from "../CharacterToggles";
 
 const CharacterLength = () => {
   const [rangeValue, setRangeValue] = useState(8);
 
   return (
     <>
-      <div className="char-length__container">
+      <div data-testid="characterLength" className="char-length__container">
         <div className="char-length__range-value">
           <h1>Character Length</h1>
           <h1>{rangeValue}</h1>
@@ -27,7 +27,7 @@ const CharacterLength = () => {
         </div>
       </div>
       <div>
-        <GenerateButton charLength={rangeValue} />
+        <CharacterToggles charLength={rangeValue} />
       </div>
     </>
   );

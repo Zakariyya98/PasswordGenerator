@@ -1,0 +1,21 @@
+.character-toggles {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__checkbox {
+    display: inline;
+    margin-right: 15px;
+    width: 30px;
+    height: 30px;
+    &--container {
+      display: flex;
+    }
+  }
+
+  &__label {
+    font-size: 20px;
+    align-self: center;
+  }
+}
