@@ -7,6 +7,9 @@ const CharacterToggles = () => {
   const [numberChecked, setNumberChecked] = useState(false);
   const [symbolChecked, setSymbolChecked] = useState(false);
 
+  // Testing state for the returnedPasssword
+  const [returnedPassword, setReturnedPassword] = useState("");
+
   const characterArrays = {
     Uppers: "QWERTYUIOPASDFGHJKLZXCVBNM",
     Lowers: "qwertyuiopasdfghjklzxcvbnm",
@@ -14,29 +17,39 @@ const CharacterToggles = () => {
     Symbols: "!@£$%^&*()_-+=:;<>",
   };
 
-  const generatePassword = () => {
-    let passwordCharacters = "";
-
-    if (upperChecked) {
-      passwordCharacters += characterArrays.Uppers;
-    }
-
-    if (lowerChecked) {
-      passwordCharacters += characterArrays.Lowers;
-    }
-
-    if (numberChecked) {
-      passwordCharacters += characterArrays.Numbers;
-    }
-
-    if (symbolChecked) {
-      passwordCharacters += characterArrays.Symbols;
-    }
-
-    return passwordCharacters;
+  const getRandomCharFromString = (str) => {
+    str.charAt(Math.floor(Math.random() * str.length));
   };
 
-  const password = generatePassword();
+  let passwordCharacters = [];
+
+  if (upperChecked) {
+    passwordCharacters.push(characterArrays.Uppers);
+  }
+
+  if (lowerChecked) {
+    passwordCharacters.push(characterArrays.Lowers);
+  }
+
+  if (numberChecked) {
+    passwordCharacters.push(characterArrays.Numbers);
+  }
+
+  if (symbolChecked) {
+    passwordCharacters.push(characterArrays.Symbols);
+  }
+
+  console.log(passwordCharacters);
+
+  const generatePasswordWithCheckedCharacters = (length) => {
+    let password = "";
+    for (let i = password.length; i < length; i++)
+      password += getRandomCharFromString(
+        Object.values(passwordCharacters).join("")
+      );
+  };
+
+  console.log(generatePasswordWithCheckedCharacters(5));
 
   return (
     <div className="character-toggles__container">
@@ -73,7 +86,7 @@ const CharacterToggles = () => {
       </div>
 
       <div>
-        <p>Generated Password: {password}</p>
+        <p>Generated Password: {returnedPassword}</p>
       </div>
     </div>
   );
