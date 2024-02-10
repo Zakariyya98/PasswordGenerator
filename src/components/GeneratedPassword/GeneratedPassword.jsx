@@ -5,7 +5,7 @@ const GeneratedPassword = () => {
     <>
       <div className="generated-password__container">
         <div>
-          <h1>Password goes here</h1>
+          <h1 className="generated-password__password">Password goes here</h1>
         </div>
       </div>
     </>
