@@ -14,24 +14,6 @@ const CharacterToggles = ({ setCharactersToggled }) => {
     Symbols: "!@£$%^&*()_-+=:;<>",
   };
 
-  let passwordCharacters = [];
-
-  if (upperChecked) {
-    passwordCharacters.push(characterArrays.Uppers);
-  }
-
-  if (lowerChecked) {
-    passwordCharacters.push(characterArrays.Lowers);
-  }
-
-  if (numberChecked) {
-    passwordCharacters.push(characterArrays.Numbers);
-  }
-
-  if (symbolChecked) {
-    passwordCharacters.push(characterArrays.Symbols);
-  }
-
   return (
     <div className="character-toggles__container">
       <div className="character-toggles__checkbox--container">
