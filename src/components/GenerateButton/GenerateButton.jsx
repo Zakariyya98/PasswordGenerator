@@ -1,9 +1,7 @@
 import { useState } from "react";
 import "./GenerateButton.scss";
 
-const GenerateButton = ({ charLength, setChars }) => {
-  const [generatedPassword, setGeneratedPassword] = useState("");
-
+const GenerateButton = ({ charLength, setChars, setGeneratedPassword }) => {
   const getRandomCharFromString = (str) =>
     str.charAt(Math.floor(Math.random() * str.length));
 
@@ -17,9 +15,8 @@ const GenerateButton = ({ charLength, setChars }) => {
   return (
     <>
       <div className="generate-button__container">
-        <p>Generated Password: {generatedPassword}</p>
         <button
-          onClick={() => generatePassword(charLength.charLength)}
+          onClick={() => generatePassword(charLength)}
           className="generate-button__button"
         >
           Generate Password
