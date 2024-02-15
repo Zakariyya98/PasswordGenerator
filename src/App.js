@@ -15,11 +15,13 @@ function App() {
 
   const [rangeValue, setRangeValue] = useState(8);
   const [charactersToggled, setCharactersToggled] = useState([]);
-  const [generatedPassword, setGeneratedPassword] = useState("");
+  const [generatedPassword, setGeneratedPassword] = useState(
+    "Click Generate Password Button"
+  );
 
   return (
     <>
-      <GeneratedPassword />
+      <GeneratedPassword generatedPassword={generatedPassword} />
       <Card>
         <CharacterLength
           rangeValue={rangeValue}
