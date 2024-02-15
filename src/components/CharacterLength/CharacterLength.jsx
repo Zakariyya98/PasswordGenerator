@@ -1,10 +1,6 @@
-import { useState } from "react";
 import "./CharacterLength.scss";
-import CharacterToggles from "../CharacterToggles";
 
-const CharacterLength = () => {
-  const [rangeValue, setRangeValue] = useState(8);
-
+const CharacterLength = ({ rangeValue, setRangeValue }) => {
   return (
     <>
       <div data-testid="characterLength" className="char-length__container">
@@ -25,9 +21,6 @@ const CharacterLength = () => {
             onChange={(event) => setRangeValue(event.target.value)}
           />
         </div>
-      </div>
-      <div>
-        <CharacterToggles charLength={rangeValue} />
       </div>
     </>
   );
