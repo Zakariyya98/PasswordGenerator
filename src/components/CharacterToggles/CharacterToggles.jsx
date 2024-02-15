@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./CharacterToggles.scss";
-import GenerateButton from "../GenerateButton";
 
-const CharacterToggles = (charLength) => {
+const CharacterToggles = ({ setCharactersToggled }) => {
   const [upperChecked, setUpperChecked] = useState(false);
   const [lowerChecked, setLowerChecked] = useState(false);
   const [numberChecked, setNumberChecked] = useState(false);
@@ -39,7 +38,18 @@ const CharacterToggles = (charLength) => {
         <input
           className="character-toggles__checkbox"
           type="checkbox"
-          onClick={(event) => setUpperChecked(event.target.checked)}
+          onClick={(event) => {
+            setUpperChecked(event.target.checked);
+            setCharactersToggled((prevState) => {
+              if (event.target.checked) {
+                return [...prevState, characterArrays.Uppers];
+              } else {
+                return prevState.filter(
+                  (characters) => characters !== characterArrays.Uppers
+                );
+              }
+            });
+          }}
         />
         <label className="character-toggles__label">
           Include Uppercase Letters
@@ -50,7 +60,18 @@ const CharacterToggles = (charLength) => {
         <input
           className="character-toggles__checkbox"
           type="checkbox"
-          onClick={(event) => setLowerChecked(event.target.checked)}
+          onClick={(event) => {
+            setLowerChecked(event.target.checked);
+            setCharactersToggled((prevState) => {
+              if (event.target.checked) {
+                return [...prevState, characterArrays.Lowers];
+              } else {
+                return prevState.filter(
+                  (characters) => characters !== characterArrays.Lowers
+                );
+              }
+            });
+          }}
         />
         <label className="character-toggles__label">
           Include Lowercase Letters
@@ -61,7 +82,18 @@ const CharacterToggles = (charLength) => {
         <input
           className="character-toggles__checkbox"
           type="checkbox"
-          onClick={(event) => setNumberChecked(event.target.checked)}
+          onClick={(event) => {
+            setNumberChecked(event.target.checked);
+            setCharactersToggled((prevState) => {
+              if (event.target.checked) {
+                return [...prevState, characterArrays.Numbers];
+              } else {
+                return prevState.filter(
+                  (characters) => characters !== characterArrays.Numbers
+                );
+              }
+            });
+          }}
         />
         <label className="character-toggles__label">Include Numbers</label>
       </div>
@@ -70,13 +102,20 @@ const CharacterToggles = (charLength) => {
         <input
           className="character-toggles__checkbox"
           type="checkbox"
-          onClick={(event) => setSymbolChecked(event.target.checked)}
+          onClick={(event) => {
+            setSymbolChecked(event.target.checked);
+            setCharactersToggled((prevState) => {
+              if (event.target.checked) {
+                return [...prevState, characterArrays.Symbols];
+              } else {
+                return prevState.filter(
+                  (characters) => characters !== characterArrays.Symbols
+                );
+              }
+            });
+          }}
         />
         <label className="character-toggles__label">Include Symbols</label>
-      </div>
-
-      <div>
-        <GenerateButton setChars={passwordCharacters} charLength={charLength} />
       </div>
     </div>
   );
