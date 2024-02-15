@@ -15,6 +15,7 @@ function App() {
 
   const [rangeValue, setRangeValue] = useState(8);
   const [charactersToggled, setCharactersToggled] = useState([]);
+  const [generatedPassword, setGeneratedPassword] = useState("");
 
   return (
     <>
@@ -29,7 +30,12 @@ function App() {
           setCharactersToggled={setCharactersToggled}
           charLength={rangeValue}
         />
-        <GenerateButton setChars={charactersToggled} charLength={rangeValue} />
+        <GenerateButton
+          setChars={charactersToggled}
+          charLength={rangeValue}
+          generatedPassword={generatedPassword}
+          setGeneratedPassword={setGeneratedPassword}
+        />
       </Card>
     </>
   );
