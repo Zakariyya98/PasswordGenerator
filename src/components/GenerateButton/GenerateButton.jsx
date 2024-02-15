@@ -1,9 +1,12 @@
 import { useState } from "react";
 import "./GenerateButton.scss";
 
-const GenerateButton = ({ charLength, setChars }) => {
-  const [generatedPassword, setGeneratedPassword] = useState("");
-
+const GenerateButton = ({
+  charLength,
+  setChars,
+  generatedPassword,
+  setGeneratedPassword,
+}) => {
   const getRandomCharFromString = (str) =>
     str.charAt(Math.floor(Math.random() * str.length));
 
