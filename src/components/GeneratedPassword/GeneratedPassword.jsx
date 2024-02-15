@@ -1,11 +1,11 @@
 import "./GeneratedPassword.scss";
 
-const GeneratedPassword = () => {
+const GeneratedPassword = ({ generatedPassword }) => {
   return (
     <>
       <div className="generated-password__container">
         <div>
-          <h1 className="generated-password__password">Password goes here</h1>
+          <h1 className="generated-password__password">{generatedPassword}</h1>
         </div>
       </div>
     </>
