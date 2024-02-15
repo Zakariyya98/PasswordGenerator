@@ -1,12 +1,9 @@
-import CharacterLength from "../CharacterLength";
 import "./Card.scss";
 
-const Card = () => {
+const Card = ({ children }) => {
   return (
     <>
-      <div className="card__container">
-        <CharacterLength />
-      </div>
+      <div className="card__container">{children}</div>
     </>
   );
 };
