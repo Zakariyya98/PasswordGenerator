@@ -7,6 +7,7 @@ import CharacterToggles from "./components/CharacterToggles";
 import GenerateButton from "./components/GenerateButton";
 
 import "./App.css";
+import PasswordStrength from "./components/PasswordStrength";
 
 function App() {
   // To allow the app to have a common ancestor component so the state can
@@ -38,6 +39,7 @@ function App() {
           generatedPassword={generatedPassword}
           setGeneratedPassword={setGeneratedPassword}
         />
+        <PasswordStrength />
       </Card>
     </>
   );
