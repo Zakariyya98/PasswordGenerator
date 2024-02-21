@@ -5,9 +5,9 @@ import CharacterLength from "./components/CharacterLength";
 import GeneratedPassword from "./components/GeneratedPassword";
 import CharacterToggles from "./components/CharacterToggles";
 import GenerateButton from "./components/GenerateButton";
+import PasswordStrength from "./components/PasswordStrength";
 
 import "./App.css";
-import PasswordStrength from "./components/PasswordStrength";
 
 function App() {
   // To allow the app to have a common ancestor component so the state can
