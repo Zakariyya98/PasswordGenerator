@@ -39,7 +39,7 @@ function App() {
           generatedPassword={generatedPassword}
           setGeneratedPassword={setGeneratedPassword}
         />
-        <PasswordStrength />
+        <PasswordStrength userPassword={generatedPassword} />
       </Card>
     </>
   );
