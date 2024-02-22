@@ -1,6 +1,18 @@
 import "./PasswordStrength.scss";
 
 const PasswordStrength = () => {
+  //////////////////////////
+  // Criteria
+  // Needs minimum 8 characters
+  // Max characters is 18 but can accept more
+  // Needs lowercase, number, uppercase and symbol to be secure
+  // Each bar is 25%
+  // Bar 1: Weak
+  // Bar 2: Medium
+  // Bar 3: Strong
+  // Bar 4: Very Strong
+  // Just a POC for now
+  //////////////////////////
   return (
     <>
       <div className="password-strength__container">
