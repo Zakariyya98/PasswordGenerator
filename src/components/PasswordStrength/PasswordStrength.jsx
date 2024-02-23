@@ -16,6 +16,11 @@ const PasswordStrength = ({ userPassword }) => {
 
   let message = "No Password";
   let passwordStrength = 0;
+  // Needs to be refactored down
+  let activeWeak = false;
+  let activeMedium = false;
+  let activeStrong = false;
+  let activeVeryStrong = false;
 
   if (userPassword.match(/[a-z]+/)) {
     passwordStrength += 1;
@@ -36,20 +41,38 @@ const PasswordStrength = ({ userPassword }) => {
   // Message displayed to user
   if (passwordStrength === 1) {
     message = "Weak";
+    // Not efficient
+    activeWeak = true;
   }
 
   if (passwordStrength === 2) {
     message = "Medium";
+    // Not efficient
+    activeWeak = true;
+    activeMedium = true;
   }
 
   if (passwordStrength === 3) {
     message = "Strong";
+    // Not efficient
+    activeWeak = true;
+    activeMedium = true;
+    activeStrong = true;
   }
 
   if (passwordStrength === 4) {
     message = "Very Strong";
+    // Not efficient
+    activeWeak = true;
+    activeMedium = true;
+    activeStrong = true;
+    activeVeryStrong = true;
   }
 
+  console.log("Weak" + activeWeak);
+  console.log("Medium" + activeMedium);
+  console.log("Strong" + activeStrong);
+  console.log("Very Strong" + activeVeryStrong);
   return (
     <>
       <div className="password-strength__container">
@@ -58,10 +81,29 @@ const PasswordStrength = ({ userPassword }) => {
         </div>
         <div className="password-strength__meter-container">
           <p>{message}</p>
-          <div className="password-strength__meter"></div>
-          <div className="password-strength__meter"></div>
-          <div className="password-strength__meter"></div>
-          <div className="password-strength__meter"></div>
+          <div
+            className={`password-strength__meter ${
+              activeWeak === true ? "password-strength__meter--active" : null
+            }`}
+          ></div>
+
+          <div
+            className={`password-strength__meter ${
+              activeMedium === true ? "password-strength__meter--active" : null
+            }`}
+          ></div>
+          <div
+            className={`password-strength__meter ${
+              activeStrong === true ? "password-strength__meter--active" : null
+            }`}
+          ></div>
+          <div
+            className={`password-strength__meter ${
+              activeVeryStrong === true
+                ? "password-strength__meter--active"
+                : null
+            }`}
+          ></div>
         </div>
       </div>
     </>
