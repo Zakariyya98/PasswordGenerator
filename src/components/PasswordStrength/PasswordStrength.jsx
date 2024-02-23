@@ -15,45 +15,40 @@ const PasswordStrength = ({ userPassword }) => {
   //////////////////////////
 
   let message = "No Password";
+  let passwordStrength = 0;
 
-  const checkPassword = (password) => {
-    let passwordStrength = 0;
+  if (userPassword.match(/[a-z]+/)) {
+    passwordStrength += 1;
+  }
 
-    if (password.match(/[a-z]+/)) {
-      passwordStrength += 1;
-    }
+  if (userPassword.match(/[A-Z]+/)) {
+    passwordStrength += 1;
+  }
 
-    if (password.match(/[A-Z]+/)) {
-      passwordStrength += 1;
-    }
+  if (userPassword.match(/[0-9]+/)) {
+    passwordStrength += 1;
+  }
 
-    if (password.match(/[0-9]+/)) {
-      passwordStrength += 1;
-    }
+  if (userPassword.match(/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/)) {
+    passwordStrength += 1;
+  }
 
-    if (password.match(/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/)) {
-      passwordStrength += 1;
-    }
+  // Message displayed to user
+  if (passwordStrength === 1) {
+    message = "Weak";
+  }
 
-    // Message displayed to user
-    if (passwordStrength === 1) {
-      message = "Weak";
-    }
+  if (passwordStrength === 2) {
+    message = "Medium";
+  }
 
-    if (passwordStrength === 2) {
-      message = "Medium";
-    }
+  if (passwordStrength === 3) {
+    message = "Strong";
+  }
 
-    if (passwordStrength === 3) {
-      message = "Strong";
-    }
-
-    if (passwordStrength === 4) {
-      message = "Very Strong";
-    }
-  };
-
-  console.log(checkPassword(userPassword));
+  if (passwordStrength === 4) {
+    message = "Very Strong";
+  }
 
   return (
     <>
