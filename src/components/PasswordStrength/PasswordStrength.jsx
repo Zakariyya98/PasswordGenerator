@@ -1,6 +1,6 @@
 import "./PasswordStrength.scss";
 
-const PasswordStrength = () => {
+const PasswordStrength = ({ userPassword }) => {
   //////////////////////////
   // Criteria
   // Needs minimum 8 characters
@@ -13,6 +13,30 @@ const PasswordStrength = () => {
   // Bar 4: Very Strong
   // Just a POC for now
   //////////////////////////
+
+  const checkPassword = (password) => {
+    // regex to check if the characters are
+    // present in the password
+
+    if (password.match(/[a-z]+/)) {
+      console.log("password contains a lowercase letter");
+    }
+
+    if (password.match(/[A-Z]+/)) {
+      console.log("password contains a uppercase letter");
+    }
+
+    if (password.match(/[0-9]+/)) {
+      console.log("Password contains a number");
+    }
+
+    if (password.match(/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/)) {
+      console.log("password contains a symbol");
+    }
+  };
+
+  console.log(checkPassword(userPassword));
+
   return (
     <>
       <div className="password-strength__container">
