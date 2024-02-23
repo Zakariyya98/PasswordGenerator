@@ -7,10 +7,10 @@ const PasswordStrength = ({ userPassword }) => {
   // Max characters is 18 but can accept more
   // Needs lowercase, number, uppercase and symbol to be secure
   // Each bar is 25%
-  // Bar 1: Weak
-  // Bar 2: Medium
-  // Bar 3: Strong
-  // Bar 4: Very Strong
+  // Bar 1: Weak - Done
+  // Bar 2: Medium - Done
+  // Bar 3: Strong - Done
+  // Bar 4: Very Strong - Done
   // Just a POC for now
   //////////////////////////
 
@@ -69,10 +69,6 @@ const PasswordStrength = ({ userPassword }) => {
     activeVeryStrong = true;
   }
 
-  console.log("Weak" + activeWeak);
-  console.log("Medium" + activeMedium);
-  console.log("Strong" + activeStrong);
-  console.log("Very Strong" + activeVeryStrong);
   return (
     <>
       <div className="password-strength__container">
