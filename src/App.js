@@ -23,6 +23,7 @@ function App() {
   return (
     <>
       <div className="app__container">
+        <h2>Password Generator</h2>
         <GeneratedPassword generatedPassword={generatedPassword} />
         <Card>
           <CharacterLength
