@@ -5,6 +5,7 @@ import CharacterLength from "./components/CharacterLength";
 import GeneratedPassword from "./components/GeneratedPassword";
 import CharacterToggles from "./components/CharacterToggles";
 import GenerateButton from "./components/GenerateButton";
+import PasswordStrength from "./components/PasswordStrength";
 
 import "./App.css";
 
@@ -32,6 +33,7 @@ function App() {
           setCharactersToggled={setCharactersToggled}
           charLength={rangeValue}
         />
+        <PasswordStrength userPassword={generatedPassword} />
         <GenerateButton
           setChars={charactersToggled}
           charLength={rangeValue}
