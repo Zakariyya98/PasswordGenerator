@@ -14,10 +14,10 @@ const PasswordStrength = ({ userPassword }) => {
   // Just a POC for now
   //////////////////////////
 
+  let message = "No Password";
+
   const checkPassword = (password) => {
     let passwordStrength = 0;
-    // regex to check if the characters are
-    // present in the password
 
     if (password.match(/[a-z]+/)) {
       passwordStrength += 1;
@@ -35,7 +35,22 @@ const PasswordStrength = ({ userPassword }) => {
       passwordStrength += 1;
     }
 
-    console.log(passwordStrength);
+    // Message displayed to user
+    if (passwordStrength === 1) {
+      message = "Weak";
+    }
+
+    if (passwordStrength === 2) {
+      message = "Medium";
+    }
+
+    if (passwordStrength === 3) {
+      message = "Strong";
+    }
+
+    if (passwordStrength === 4) {
+      message = "Very Strong";
+    }
   };
 
   console.log(checkPassword(userPassword));
@@ -47,7 +62,7 @@ const PasswordStrength = ({ userPassword }) => {
           <h1>Password Strength</h1>
         </div>
         <div className="password-strength__meter-container">
-          <p>Weak</p>
+          <p>{message}</p>
           <div className="password-strength__meter"></div>
           <div className="password-strength__meter"></div>
           <div className="password-strength__meter"></div>
