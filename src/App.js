@@ -33,13 +33,13 @@ function App() {
           setCharactersToggled={setCharactersToggled}
           charLength={rangeValue}
         />
+        <PasswordStrength userPassword={generatedPassword} />
         <GenerateButton
           setChars={charactersToggled}
           charLength={rangeValue}
           generatedPassword={generatedPassword}
           setGeneratedPassword={setGeneratedPassword}
         />
-        <PasswordStrength userPassword={generatedPassword} />
       </Card>
     </>
   );
