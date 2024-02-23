@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Password Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This build was inspired by the Frontend Mentor Password Generator App.
 
-## Available Scripts
+The link to this is below:
+https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh
 
-In the project directory, you can run:
+The motivation for this build was to enhance my knowledge and create
+something that can be showcased on my profile. It has also been deployed.
+to Netlify and is available to view at the link [Insert Link Here]
 
-### `npm start`
+It can be used on desktops, tablets, and mobile devices, and it is responsive across all
+of these devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+THE GENERATED PASSWORDS ARE RANDOM AND ARE NOT STORED ANYWHERE. ALL SOURCE
+CODE IS AVAILABLE TO VIEW IN THE COMMIT HISTORY FOR YOU TO BROWSE THROUGH
+SHOULD YOU WANT TO SEE HOW THIS WAS BUILT.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Technologies Used
 
-### `npm test`
+- React
+- HTML
+- CSS
+- JavaScript
+- SASS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Running the WebApp Locally
 
-### `npm run build`
+- Clone this repo.
+- Run 'npm install' in the cloned directory to install the required dependencies.
+- Open a terminal and run 'npm start'.
+- See the WebApp at http://localhost:3000/.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Please Note:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This WebApp is a POC (proof of concept) and should not be actively used to
+generate your passwords. If you do decide to use this password generator,
+I will not be held liable for any loss of data or loss of access to your
+accounts.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Please use https://www.passwordmonster.com/ to test the strength of the
+password, as the strength metre that is bundled with this app is just a
+POC. The strength metre is basic and based on the selected
+character sets.
