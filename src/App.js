@@ -7,7 +7,7 @@ import CharacterToggles from "./components/CharacterToggles";
 import GenerateButton from "./components/GenerateButton";
 import PasswordStrength from "./components/PasswordStrength";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   // To allow the app to have a common ancestor component so the state can
@@ -22,25 +22,27 @@ function App() {
 
   return (
     <>
-      <GeneratedPassword generatedPassword={generatedPassword} />
-      <Card>
-        <CharacterLength
-          rangeValue={rangeValue}
-          setRangeValue={setRangeValue}
-        />
-        <CharacterToggles
-          charactersToggled={charactersToggled}
-          setCharactersToggled={setCharactersToggled}
-          charLength={rangeValue}
-        />
-        <PasswordStrength userPassword={generatedPassword} />
-        <GenerateButton
-          setChars={charactersToggled}
-          charLength={rangeValue}
-          generatedPassword={generatedPassword}
-          setGeneratedPassword={setGeneratedPassword}
-        />
-      </Card>
+      <div className="app__container">
+        <GeneratedPassword generatedPassword={generatedPassword} />
+        <Card>
+          <CharacterLength
+            rangeValue={rangeValue}
+            setRangeValue={setRangeValue}
+          />
+          <CharacterToggles
+            charactersToggled={charactersToggled}
+            setCharactersToggled={setCharactersToggled}
+            charLength={rangeValue}
+          />
+          <PasswordStrength userPassword={generatedPassword} />
+          <GenerateButton
+            setChars={charactersToggled}
+            charLength={rangeValue}
+            generatedPassword={generatedPassword}
+            setGeneratedPassword={setGeneratedPassword}
+          />
+        </Card>
+      </div>
     </>
   );
 }
