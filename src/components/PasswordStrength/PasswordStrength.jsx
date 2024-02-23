@@ -15,24 +15,27 @@ const PasswordStrength = ({ userPassword }) => {
   //////////////////////////
 
   const checkPassword = (password) => {
+    let passwordStrength = 0;
     // regex to check if the characters are
     // present in the password
 
     if (password.match(/[a-z]+/)) {
-      console.log("password contains a lowercase letter");
+      passwordStrength += 1;
     }
 
     if (password.match(/[A-Z]+/)) {
-      console.log("password contains a uppercase letter");
+      passwordStrength += 1;
     }
 
     if (password.match(/[0-9]+/)) {
-      console.log("Password contains a number");
+      passwordStrength += 1;
     }
 
     if (password.match(/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/)) {
-      console.log("password contains a symbol");
+      passwordStrength += 1;
     }
+
+    console.log(passwordStrength);
   };
 
   console.log(checkPassword(userPassword));
