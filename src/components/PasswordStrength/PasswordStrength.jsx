@@ -14,7 +14,7 @@ const PasswordStrength = ({ userPassword }) => {
   // Just a POC for now
   //////////////////////////
 
-  let message = "No Password";
+  let message = "NO PASSWORD";
   let passwordStrength = 0;
   // Needs to be refactored down
   let activeWeak = false;
@@ -40,20 +40,20 @@ const PasswordStrength = ({ userPassword }) => {
 
   // Message displayed to user
   if (passwordStrength === 1) {
-    message = "Weak";
+    message = "WEAK";
     // Not efficient
     activeWeak = true;
   }
 
   if (passwordStrength === 2) {
-    message = "Medium";
+    message = "MEDIUM";
     // Not efficient
     activeWeak = true;
     activeMedium = true;
   }
 
   if (passwordStrength === 3) {
-    message = "Strong";
+    message = "STRONG";
     // Not efficient
     activeWeak = true;
     activeMedium = true;
@@ -61,7 +61,7 @@ const PasswordStrength = ({ userPassword }) => {
   }
 
   if (passwordStrength === 4) {
-    message = "Very Strong";
+    message = "VERY STRONG";
     // Not efficient
     activeWeak = true;
     activeMedium = true;
@@ -74,7 +74,7 @@ const PasswordStrength = ({ userPassword }) => {
       <div className="password-strength__container">
         <div className="password-strength__inner-content">
           <div className="password-strength__title">
-            <h1>Strength:</h1>
+            <h1>STRENGTH</h1>
           </div>
           <div className="password-strength__meter-container">
             <p className="password-strength__strength">{message}</p>
