@@ -7,7 +7,7 @@ https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh
 
 The motivation for this build was to enhance my knowledge and create
 something that can be showcased on my profile. It has also been deployed.
-The link is: [INSERT LINK HERE]
+The link is: https://thunderous-cocada-60f20c.netlify.app/
 
 It can be used on desktops, tablets, and mobile devices, it is responsive across all
 of these devices.
