@@ -17,7 +17,7 @@ function App() {
   const [rangeValue, setRangeValue] = useState(8);
   const [charactersToggled, setCharactersToggled] = useState([]);
   const [generatedPassword, setGeneratedPassword] = useState(
-    "Click Generate Password Button"
+    "Select Your Options And Generate"
   );
 
   return (
