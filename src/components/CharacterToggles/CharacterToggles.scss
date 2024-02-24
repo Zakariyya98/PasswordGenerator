@@ -2,6 +2,8 @@
   &__container {
     display: flex;
     flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   &__checkbox {
@@ -11,6 +13,7 @@
     height: 30px;
     &--container {
       display: flex;
+      margin-bottom: 15px;
     }
   }
 
