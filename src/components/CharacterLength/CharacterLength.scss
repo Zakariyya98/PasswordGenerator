@@ -5,9 +5,10 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 20px;
   }
   &__range {
-    width: 400px;
+    width: 560px;
     &-value {
       display: flex;
       align-items: center;
