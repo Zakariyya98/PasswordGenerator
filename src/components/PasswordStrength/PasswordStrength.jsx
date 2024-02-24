@@ -33,7 +33,7 @@ const PasswordStrength = ({ userPassword }) => {
   if (userPassword.match(/[0-9]+/)) {
     passwordStrength += 1;
   }
-
+  // eslint-disable-next-line
   if (userPassword.match(/[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/)) {
     passwordStrength += 1;
   }

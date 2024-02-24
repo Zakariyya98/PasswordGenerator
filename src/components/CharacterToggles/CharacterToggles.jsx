@@ -2,9 +2,13 @@ import { useState } from "react";
 import "./CharacterToggles.scss";
 
 const CharacterToggles = ({ setCharactersToggled }) => {
+  // eslint-disable-next-line
   const [upperChecked, setUpperChecked] = useState(false);
+  // eslint-disable-next-line
   const [lowerChecked, setLowerChecked] = useState(false);
+  // eslint-disable-next-line
   const [numberChecked, setNumberChecked] = useState(false);
+  // eslint-disable-next-line
   const [symbolChecked, setSymbolChecked] = useState(false);
 
   const characterArrays = {
