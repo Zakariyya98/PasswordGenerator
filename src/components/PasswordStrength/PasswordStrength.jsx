@@ -22,11 +22,17 @@ const PasswordStrength = ({ userPassword }) => {
   let activeStrong = false;
   let activeVeryStrong = false;
 
-  if (userPassword.match(/[a-z]+/)) {
+  if (
+    userPassword.match(/[a-z]+/) &&
+    userPassword !== "Select Your Options And Generate"
+  ) {
     passwordStrength += 1;
   }
 
-  if (userPassword.match(/[A-Z]+/)) {
+  if (
+    userPassword.match(/[A-Z]+/) &&
+    userPassword !== "Select Your Options And Generate"
+  ) {
     passwordStrength += 1;
   }
 
