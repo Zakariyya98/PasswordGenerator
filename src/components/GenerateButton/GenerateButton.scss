@@ -4,13 +4,16 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
   &__button {
     background-color: #b9fdb6;
     font-size: 22px;
     border: none;
     height: 80px;
-    width: 450px;
+    max-width: 450px;
+    width: 100%;
     border-radius: 30px;
     &:hover {
       cursor: pointer;
