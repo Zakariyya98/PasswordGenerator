@@ -86,13 +86,13 @@ const PasswordStrength = ({ userPassword }) => {
             <p className="password-strength__strength">{message}</p>
 
             <div
-              className={`password-strength__meter ${
+              className={`password-strength__meter--pill ${
                 activeWeak === true ? "password-strength__meter--active" : null
               }`}
             ></div>
 
             <div
-              className={`password-strength__meter ${
+              className={`password-strength__meter--pill ${
                 activeMedium === true
                   ? "password-strength__meter--active"
                   : null
@@ -100,7 +100,7 @@ const PasswordStrength = ({ userPassword }) => {
             ></div>
 
             <div
-              className={`password-strength__meter ${
+              className={`password-strength__meter--pill ${
                 activeStrong === true
                   ? "password-strength__meter--active"
                   : null
@@ -108,7 +108,7 @@ const PasswordStrength = ({ userPassword }) => {
             ></div>
 
             <div
-              className={`password-strength__meter ${
+              className={`password-strength__meter--pill  ${
                 activeVeryStrong === true
                   ? "password-strength__meter--active"
                   : null
