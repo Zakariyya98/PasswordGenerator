@@ -2,107 +2,51 @@ import { useState } from "react";
 import "./CharacterToggles.scss";
 
 const CharacterToggles = ({ setCharactersToggled }) => {
-  // eslint-disable-next-line
-  const [upperChecked, setUpperChecked] = useState(false);
-  // eslint-disable-next-line
-  const [lowerChecked, setLowerChecked] = useState(false);
-  // eslint-disable-next-line
-  const [numberChecked, setNumberChecked] = useState(false);
-  // eslint-disable-next-line
-  const [symbolChecked, setSymbolChecked] = useState(false);
+  const [checkboxes, setCheckboxes] = useState({
+    Uppercase: false,
+    Lowercase: false,
+    Numbers: false,
+    Symbols: false,
+  });
 
   const characterArrays = {
-    Uppers: "QWERTYUIOPASDFGHJKLZXCVBNM",
-    Lowers: "qwertyuiopasdfghjklzxcvbnm",
+    Uppercase: "QWERTYUIOPASDFGHJKLZXCVBNM",
+    Lowercase: "qwertyuiopasdfghjklzxcvbnm",
     Numbers: "1234567890",
     Symbols: "!@£$%^&*()_-+=:;<>",
   };
 
+  const checkboxToggle = (key, checked) => {
+    setCheckboxes((prevstate) => ({
+      ...prevstate,
+      [key]: checked,
+    }));
+
+    setCharactersToggled((prevstate) => {
+      if (checked) {
+        return [...prevstate, characterArrays[key]];
+      } else {
+        return prevstate.filter(
+          (characters) => characters !== characterArrays[key]
+        );
+      }
+    });
+  };
+
   return (
     <div className="character-toggles__container">
-      <div className="character-toggles__checkbox--container">
-        <input
-          className="character-toggles__checkbox"
-          type="checkbox"
-          onClick={(event) => {
-            setUpperChecked(event.target.checked);
-            setCharactersToggled((prevState) => {
-              if (event.target.checked) {
-                return [...prevState, characterArrays.Uppers];
-              } else {
-                return prevState.filter(
-                  (characters) => characters !== characterArrays.Uppers
-                );
-              }
-            });
-          }}
-        />
-        <label className="character-toggles__label">
-          Include Uppercase Letters
-        </label>
-      </div>
-
-      <div className="character-toggles__checkbox--container">
-        <input
-          className="character-toggles__checkbox"
-          type="checkbox"
-          onClick={(event) => {
-            setLowerChecked(event.target.checked);
-            setCharactersToggled((prevState) => {
-              if (event.target.checked) {
-                return [...prevState, characterArrays.Lowers];
-              } else {
-                return prevState.filter(
-                  (characters) => characters !== characterArrays.Lowers
-                );
-              }
-            });
-          }}
-        />
-        <label className="character-toggles__label">
-          Include Lowercase Letters
-        </label>
-      </div>
-
-      <div className="character-toggles__checkbox--container">
-        <input
-          className="character-toggles__checkbox"
-          type="checkbox"
-          onClick={(event) => {
-            setNumberChecked(event.target.checked);
-            setCharactersToggled((prevState) => {
-              if (event.target.checked) {
-                return [...prevState, characterArrays.Numbers];
-              } else {
-                return prevState.filter(
-                  (characters) => characters !== characterArrays.Numbers
-                );
-              }
-            });
-          }}
-        />
-        <label className="character-toggles__label">Include Numbers</label>
-      </div>
-
-      <div className="character-toggles__checkbox--container">
-        <input
-          className="character-toggles__checkbox"
-          type="checkbox"
-          onClick={(event) => {
-            setSymbolChecked(event.target.checked);
-            setCharactersToggled((prevState) => {
-              if (event.target.checked) {
-                return [...prevState, characterArrays.Symbols];
-              } else {
-                return prevState.filter(
-                  (characters) => characters !== characterArrays.Symbols
-                );
-              }
-            });
-          }}
-        />
-        <label className="character-toggles__label">Include Symbols</label>
-      </div>
+      {Object.keys(checkboxes).map((key) => (
+        <div key={key} className="character-toggles__checkbox--container">
+          <input
+            className="character-toggles__checkbox"
+            type="checkbox"
+            onChange={(event) => checkboxToggle(key, event.target.checked)}
+          />
+          <label className="character-toggles__label">
+            {`Include ${key.charAt(0).toUpperCase() + key.slice(1)}`}
+          </label>
+        </div>
+      ))}
     </div>
   );
 };
