@@ -15,6 +15,7 @@ const PasswordStrength = ({ userPassword }) => {
       name: "Number",
     },
     {
+      // eslint-disable-next-line
       regex: /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/,
       name: "Symbol",
     },
