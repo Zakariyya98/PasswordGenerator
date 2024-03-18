@@ -1,11 +1,6 @@
 import CharacterLength from "./CharacterLength";
 import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 
-// Check if this is the correct way to cleanup after each test runs
-cleanup(() => {
-  return cleanup;
-});
-
 describe("Given the user is using the password generator", () => {
   describe("When the user has landed on a fresh instance of the app", () => {
     beforeEach(() => {
@@ -50,5 +45,9 @@ describe("Given the user is using the password generator", () => {
       fireEvent.change(rangeSlider, { target: { value: 1 } });
       expect(rangeSlider.value).toBe("2");
     });
+  });
+
+  afterEach(() => {
+    cleanup();
   });
 });
