@@ -1,5 +1,5 @@
 import CharacterToggles from "./CharacterToggles";
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 
 describe("Given the user is using the password generator", () => {
   describe("When the user has landed on a fresh instance of the app", () => {
@@ -40,7 +40,61 @@ describe("Given the user is using the password generator", () => {
     });
   });
 
-  afterEach(() => {
-    cleanup();
+  describe("Given the user wants to select a set of characters", () => {
+    beforeEach(() => {
+      render(<CharacterToggles />);
+    });
+
+    describe("When the user checks the Uppercase box", () => {
+      it("Then the box should be checked", () => {
+        const characterToggleCheckboxUpper = screen.getByTestId(
+          "characterTogglesCheckbox--Uppercase"
+        );
+        fireEvent.change(characterToggleCheckboxUpper, {
+          target: { checked: true },
+        });
+        expect(characterToggleCheckboxUpper).toBeChecked();
+      });
+    });
+
+    describe("When the user checks the Lowercase box", () => {
+      it("Then the box should be checked", () => {
+        const characterToggleCheckboxLower = screen.getByTestId(
+          "characterTogglesCheckbox--Lowercase"
+        );
+        fireEvent.change(characterToggleCheckboxLower, {
+          target: { checked: true },
+        });
+        expect(characterToggleCheckboxLower).toBeChecked();
+      });
+    });
+
+    describe("When the user checks the Numbers box", () => {
+      it("Then the box should be checked", () => {
+        const characterToggleCheckboxNumber = screen.getByTestId(
+          "characterTogglesCheckbox--Numbers"
+        );
+        fireEvent.change(characterToggleCheckboxNumber, {
+          target: { checked: true },
+        });
+        expect(characterToggleCheckboxNumber).toBeChecked();
+      });
+    });
+
+    describe("When the user checks the Symbols box", () => {
+      it("Then the box should be checked", () => {
+        const characterToggleCheckboxSymbol = screen.getByTestId(
+          "characterTogglesCheckbox--Symbols"
+        );
+        fireEvent.change(characterToggleCheckboxSymbol, {
+          target: { checked: true },
+        });
+        expect(characterToggleCheckboxSymbol).toBeChecked();
+      });
+    });
   });
+});
+
+afterEach(() => {
+  cleanup();
 });
