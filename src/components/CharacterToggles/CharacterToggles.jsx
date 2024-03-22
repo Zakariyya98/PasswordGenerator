@@ -34,10 +34,14 @@ const CharacterToggles = ({ setCharactersToggled }) => {
   };
 
   return (
-    <div className="character-toggles__container">
+    <div
+      data-testid="characterToggles"
+      className="character-toggles__container"
+    >
       {Object.keys(checkboxes).map((key) => (
         <div key={key} className="character-toggles__checkbox--container">
           <input
+            data-testid={`characterTogglesCheckbox--${key}`}
             className="character-toggles__checkbox"
             type="checkbox"
             onChange={(event) => checkboxToggle(key, event.target.checked)}
