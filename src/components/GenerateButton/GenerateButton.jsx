@@ -13,7 +13,7 @@ const GenerateButton = ({ charLength, setChars, setGeneratedPassword }) => {
 
   return (
     <>
-      <div className="generate-button__container">
+      <div data-testid="generateButton" className="generate-button__container">
         <button
           onClick={() => generatePassword(charLength)}
           className="generate-button__button"
