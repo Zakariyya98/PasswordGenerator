@@ -14,36 +14,34 @@ describe("Given the user is using the password generator", () => {
     });
   });
 
-  it("generates a password with specified length when clicked", () => {
-    const setChars = {
-      lowerCase: false,
-      upperCase: false,
-      numbers: false,
-      symbols: false,
-    };
-    const setGeneratedPasswordMock = jest.fn();
-    render(
-      <GenerateButton
-        charLength={8}
-        setChars={setChars}
-        setGeneratedPassword={setGeneratedPasswordMock}
-      />
-    );
+  describe("When the user has all the character sets selected and a characterLength of 8", () => {
+    it("Then the generated password should have 8 characters and at least 1 character from each character set", () => {
+      const setChars = {
+        Uppercase: "QWERTYUIOPASDFGHJKLZXCVBNM",
+        Lowercase: "qwertyuiopasdfghjklzxcvbnm",
+        Numbers: "1234567890",
+        Symbols: "!@£$%^&*()_-+=:;<>",
+      };
 
-    const generateButton = screen.getByRole("button", {
-      name: /generate password/i,
+      const setGeneratedPasswordMock = jest.fn();
+
+      render(
+        <GenerateButton
+          charLength={8}
+          setChars={setChars}
+          setGeneratedPassword={setGeneratedPasswordMock}
+        />
+      );
+
+      const generateButton = screen.getByRole("button", {
+        name: /generate password/i,
+      });
+
+      fireEvent.click(generateButton);
+      expect(setGeneratedPasswordMock).toHaveBeenCalledTimes(1);
+      expect(setGeneratedPasswordMock).toHaveBeenCalledWith(expect.any(String));
+      expect(setGeneratedPasswordMock.mock.calls[0][0]).toHaveLength(8);
     });
-    fireEvent.click(generateButton);
-
-    console.log("Calls:", setGeneratedPasswordMock.mock.calls);
-    console.log(
-      "Generated Password:",
-      setGeneratedPasswordMock.mock.calls[0][0]
-    );
-
-    expect(setGeneratedPasswordMock).toHaveBeenCalledTimes(1);
-    expect(setGeneratedPasswordMock).toHaveBeenCalledWith(expect.any(String));
-    expect(setGeneratedPasswordMock.mock.calls[0][0]).toHaveLength(8);
   });
 });
 
