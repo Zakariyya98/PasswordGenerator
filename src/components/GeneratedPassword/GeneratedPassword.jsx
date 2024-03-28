@@ -3,7 +3,10 @@ import "./GeneratedPassword.scss";
 const GeneratedPassword = ({ generatedPassword }) => {
   return (
     <>
-      <div className="generated-password__container">
+      <div
+        data-testid="generatedPassword"
+        className="generated-password__container"
+      >
         <div>
           <h1 className="generated-password__password">{generatedPassword}</h1>
         </div>
