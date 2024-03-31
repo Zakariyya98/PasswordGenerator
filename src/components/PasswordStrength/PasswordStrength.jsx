@@ -39,7 +39,10 @@ const PasswordStrength = ({ userPassword }) => {
   }
 
   return (
-    <div className="password-strength__container">
+    <div
+      data-testid="passwordStrength"
+      className="password-strength__container"
+    >
       <div className="password-strength__inner-content">
         <div className="password-strength__title">
           <h1>STRENGTH</h1>
