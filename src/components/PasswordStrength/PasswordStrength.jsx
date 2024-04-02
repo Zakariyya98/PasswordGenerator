@@ -39,13 +39,21 @@ const PasswordStrength = ({ userPassword }) => {
   }
 
   return (
-    <div className="password-strength__container">
+    <div
+      data-testid="passwordStrength"
+      className="password-strength__container"
+    >
       <div className="password-strength__inner-content">
         <div className="password-strength__title">
           <h1>STRENGTH</h1>
         </div>
         <div className="password-strength__meter-container">
-          <p className="password-strength__strength">{message}</p>
+          <p
+            data-testid="passwordStrengthMessage"
+            className="password-strength__strength"
+          >
+            {message}
+          </p>
 
           {activeClasses.map((isActive, index) => (
             <div

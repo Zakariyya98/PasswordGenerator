@@ -3,11 +3,22 @@ import "./GeneratedPassword.scss";
 const GeneratedPassword = ({ generatedPassword }) => {
   return (
     <>
-      <div className="generated-password__container">
+      <div
+        data-testid="generatedPassword"
+        className="generated-password__container"
+      >
         <div>
-          <h1 className="generated-password__password">{generatedPassword}</h1>
+          <h1
+            data-testid="generatedPassword-display"
+            className="generated-password__password"
+          >
+            {generatedPassword}
+          </h1>
         </div>
-        <div onClick={() => navigator.clipboard.writeText(generatedPassword)}>
+        <div
+          data-testid="generatedPassword-clipboard"
+          onClick={() => navigator.clipboard.writeText(generatedPassword)}
+        >
           <svg
             className="generated-password__copy-password"
             xmlns="http://www.w3.org/2000/svg"

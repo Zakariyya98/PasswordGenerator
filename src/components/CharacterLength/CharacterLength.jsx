@@ -10,6 +10,7 @@ const CharacterLength = ({ rangeValue, setRangeValue }) => {
         </div>
         <div>
           <input
+            data-testid="characterLengthRangeSlider"
             className="char-length__range"
             type="range"
             id="character-length"

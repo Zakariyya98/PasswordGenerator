@@ -40,5 +40,5 @@ accounts.
 
 Please use https://www.passwordmonster.com/ to test the strength of the
 password, as the strength metre that is bundled with this app is just a
-POC. The strength metre is basic and based on the selected
-character sets.
+POC. The strength metre is basic and based on the active character sets
+and not the length of the password.
