@@ -21,6 +21,14 @@ describe("Given the user is using the password generator", () => {
     });
   });
 
+  // The way the strength meter is wired to work is based off of active character
+  // sets see README for more. These sets can be in any order so for example if
+  // the userPassword was "3" this would still show WEAK as only the Number
+  // character set is active.
+
+  // Another example is if the userPassword was ":Q", this would show MEDIUM as
+  // only the Symbol character set and the Uppercase character sets are active.
+
   describe("When the user has generated a password with one character set", () => {
     beforeEach(() => {
       render(<PasswordStrength userPassword={"qwerty"} />);
