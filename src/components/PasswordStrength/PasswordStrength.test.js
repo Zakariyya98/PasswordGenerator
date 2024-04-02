@@ -12,6 +12,26 @@ describe("Given the user is using the password generator", () => {
       const passwordStrengthComponent = screen.getByTestId("passwordStrength");
       expect(passwordStrengthComponent).toBeInTheDocument;
     });
+
+    it('Then the initial value should be "NO PASSWORD"', () => {
+      const passwordStrengthMessage = screen.getByTestId(
+        "passwordStrengthMessage"
+      );
+      expect(passwordStrengthMessage).toHaveTextContent("NO PASSWORD");
+    });
+  });
+});
+
+describe("Given the user has generated a password with one character set", () => {
+  beforeEach(() => {
+    render(<PasswordStrength userPassword={"qwerty"} />);
+  });
+
+  it('Then the strenth meter should read "WEAK"', () => {
+    const passwordStrengthMessage = screen.getByTestId(
+      "passwordStrengthMessage"
+    );
+    expect(passwordStrengthMessage).toHaveTextContent("WEAK");
   });
 });
 
