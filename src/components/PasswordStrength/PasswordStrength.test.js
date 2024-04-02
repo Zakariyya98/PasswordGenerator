@@ -20,57 +20,57 @@ describe("Given the user is using the password generator", () => {
       expect(passwordStrengthMessage).toHaveTextContent("NO PASSWORD");
     });
   });
-});
 
-describe("Given the user has generated a password with one character set", () => {
-  beforeEach(() => {
-    render(<PasswordStrength userPassword={"qwerty"} />);
+  describe("When the user has generated a password with one character set", () => {
+    beforeEach(() => {
+      render(<PasswordStrength userPassword={"qwerty"} />);
+    });
+
+    it('Then the strenth meter should read "WEAK"', () => {
+      const passwordStrengthMessage = screen.getByTestId(
+        "passwordStrengthMessage"
+      );
+      expect(passwordStrengthMessage).toHaveTextContent("WEAK");
+    });
   });
 
-  it('Then the strenth meter should read "WEAK"', () => {
-    const passwordStrengthMessage = screen.getByTestId(
-      "passwordStrengthMessage"
-    );
-    expect(passwordStrengthMessage).toHaveTextContent("WEAK");
-  });
-});
+  describe("When the user has generated a password with two character sets", () => {
+    beforeEach(() => {
+      render(<PasswordStrength userPassword={"qweRTY"} />);
+    });
 
-describe("Given the user has generated a password with two character sets", () => {
-  beforeEach(() => {
-    render(<PasswordStrength userPassword={"qweRTY"} />);
-  });
-
-  it('Then the strenth meter should read "MEDIUM"', () => {
-    const passwordStrengthMessage = screen.getByTestId(
-      "passwordStrengthMessage"
-    );
-    expect(passwordStrengthMessage).toHaveTextContent("MEDIUM");
-  });
-});
-
-describe("Given the user has generated a password with three character sets", () => {
-  beforeEach(() => {
-    render(<PasswordStrength userPassword={"qw3RTy"} />);
+    it('Then the strenth meter should read "MEDIUM"', () => {
+      const passwordStrengthMessage = screen.getByTestId(
+        "passwordStrengthMessage"
+      );
+      expect(passwordStrengthMessage).toHaveTextContent("MEDIUM");
+    });
   });
 
-  it('Then the strenth meter should read "STRONG"', () => {
-    const passwordStrengthMessage = screen.getByTestId(
-      "passwordStrengthMessage"
-    );
-    expect(passwordStrengthMessage).toHaveTextContent("STRONG");
-  });
-});
+  describe("When the user has generated a password with three character sets", () => {
+    beforeEach(() => {
+      render(<PasswordStrength userPassword={"qw3R7Y"} />);
+    });
 
-describe("Given the user has generated a password with four character sets", () => {
-  beforeEach(() => {
-    render(<PasswordStrength userPassword={"qw3RTy;"} />);
+    it('Then the strenth meter should read "STRONG"', () => {
+      const passwordStrengthMessage = screen.getByTestId(
+        "passwordStrengthMessage"
+      );
+      expect(passwordStrengthMessage).toHaveTextContent("STRONG");
+    });
   });
 
-  it('Then the strenth meter should read "VERY STRONG"', () => {
-    const passwordStrengthMessage = screen.getByTestId(
-      "passwordStrengthMessage"
-    );
-    expect(passwordStrengthMessage).toHaveTextContent("VERY STRONG");
+  describe("When the user has generated a password with all four character sets", () => {
+    beforeEach(() => {
+      render(<PasswordStrength userPassword={"qw3RTy;"} />);
+    });
+
+    it('Then the strenth meter should read "VERY STRONG"', () => {
+      const passwordStrengthMessage = screen.getByTestId(
+        "passwordStrengthMessage"
+      );
+      expect(passwordStrengthMessage).toHaveTextContent("VERY STRONG");
+    });
   });
 });
 
