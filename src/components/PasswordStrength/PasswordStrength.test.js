@@ -35,6 +35,45 @@ describe("Given the user has generated a password with one character set", () =>
   });
 });
 
+describe("Given the user has generated a password with two character sets", () => {
+  beforeEach(() => {
+    render(<PasswordStrength userPassword={"qweRTY"} />);
+  });
+
+  it('Then the strenth meter should read "MEDIUM"', () => {
+    const passwordStrengthMessage = screen.getByTestId(
+      "passwordStrengthMessage"
+    );
+    expect(passwordStrengthMessage).toHaveTextContent("MEDIUM");
+  });
+});
+
+describe("Given the user has generated a password with three character sets", () => {
+  beforeEach(() => {
+    render(<PasswordStrength userPassword={"qw3RTy"} />);
+  });
+
+  it('Then the strenth meter should read "STRONG"', () => {
+    const passwordStrengthMessage = screen.getByTestId(
+      "passwordStrengthMessage"
+    );
+    expect(passwordStrengthMessage).toHaveTextContent("STRONG");
+  });
+});
+
+describe("Given the user has generated a password with four character sets", () => {
+  beforeEach(() => {
+    render(<PasswordStrength userPassword={"qw3RTy;"} />);
+  });
+
+  it('Then the strenth meter should read "VERY STRONG"', () => {
+    const passwordStrengthMessage = screen.getByTestId(
+      "passwordStrengthMessage"
+    );
+    expect(passwordStrengthMessage).toHaveTextContent("VERY STRONG");
+  });
+});
+
 afterEach(() => {
   cleanup();
 });
