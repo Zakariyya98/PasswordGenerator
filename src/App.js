@@ -10,9 +10,9 @@ import PasswordStrength from "./components/PasswordStrength";
 import "./App.scss";
 
 function App() {
-  // To allow the app to have a common ancestor component so the state can
-  // be passed between components I have rearranged the way the component
-  // state is managed.
+  // This is the common ancestor component so the state can be
+  // passed between components with ease, this eliminates duplicated
+  // code.
 
   const [rangeValue, setRangeValue] = useState(8);
   const [charactersToggled, setCharactersToggled] = useState([]);
